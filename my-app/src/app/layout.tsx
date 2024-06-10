@@ -11,6 +11,10 @@ export const metadata = {
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
+      <head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+      </head>
       <body className="bg-light-blue-500">
         <Navbar />
         <main className="flex flex-col items-center justify-center min-h-screen">
