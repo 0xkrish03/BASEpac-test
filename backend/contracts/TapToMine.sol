@@ -5,6 +5,14 @@ contract TapToMine {
     address public owner;
     uint256 public rewardPerTap;
     mapping(address => uint256) public userBalances;
+    mapping(address => Player) public players;
+    address[] public playerAddresses;
+
+    struct Player {
+        address playerAddress;
+        uint256 earnings;
+        uint256 clicks;
+    }
 
     event Tap(address indexed user, uint256 reward);
     event Withdraw(address indexed user, uint256 amount);
@@ -27,6 +35,15 @@ contract TapToMine {
 
         userBalances[msg.sender] += rewardPerTap;
         emit Tap(msg.sender, rewardPerTap);
+
+        Player storage player = players[msg.sender];
+        player.playerAddress = msg.sender;
+        player.earnings += rewardPerTap;
+        player.clicks += 1;
+
+        if (player.clicks == 1) {
+            playerAddresses.push(msg.sender);
+        }
     }
 
     function ownerWithdraw() external onlyOwner {
@@ -53,6 +70,24 @@ contract TapToMine {
     function updateRewardPerTap(uint256 newReward) external onlyOwner {
         rewardPerTap = newReward;
         emit UpdateReward(owner, newReward);
+    }
+
+    function getTopPlayers(uint256 count) public view returns (Player[] memory) {
+        require(count <= playerAddresses.length, "Not enough players");
+
+        Player[] memory topPlayers = new Player[](count);
+        for (uint256 i = 0; i < playerAddresses.length; i++) {
+            for (uint256 j = 0; j < count; j++) {
+                if (topPlayers[j].earnings < players[playerAddresses[i]].earnings) {
+                    for (uint256 k = count - 1; k > j; k--) {
+                        topPlayers[k] = topPlayers[k - 1];
+                    }
+                    topPlayers[j] = players[playerAddresses[i]];
+                    break;
+                }
+            }
+        }
+        return topPlayers;
     }
 
     receive() external payable {
