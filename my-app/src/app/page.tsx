@@ -1,8 +1,8 @@
 // app/page.tsx
 "use client";
 import React, { useState } from 'react';
-import PacmanLogo from '../../components/PacmanLogo';
-import { BlueCreateWalletButton } from '../../components/CreateWalletButton';
+import PacmanLogo from './components/PacmanLogo';
+import { BlueCreateWalletButton } from './components/CreateWalletButton';
 
 const Home: React.FC = () => {
   const [account, setAccount] = useState<string | null>(null);

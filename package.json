@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@coinbase/onchainkit": "^0.20.0",
     "@coinbase/wallet-sdk": "^4.0.3",
     "@thirdweb-dev/sdk": "^4.0.92",
     "@types/node": "^20.14.2",
