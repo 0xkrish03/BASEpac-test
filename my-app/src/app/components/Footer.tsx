@@ -1,13 +1,7 @@
-import React from 'react';
-
-const Footer: React.FC = () => {
+export default function Footer() {
   return (
-    <footer className="w-full py-4 bg-gray-800 text-white mt-4">
-      <div className="container mx-auto text-center">
-        © 2024 PACMAN Site. All rights reserved.
-      </div>
+    <footer className="bg-blue-500 p-4 text-center text-white">
+      © 2024 PACMAN Site
     </footer>
   );
-};
-
-export default Footer;
+}

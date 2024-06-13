@@ -1,4 +1,3 @@
-import React from 'react';
 import '../../styles/globals.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -8,7 +7,11 @@ export const metadata = {
   description: 'A simple PACMAN site with animation',
 };
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <head>
@@ -24,6 +27,4 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       </body>
     </html>
   );
-};
-
-export default RootLayout;
+}
