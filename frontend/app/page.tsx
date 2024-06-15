@@ -1,10 +1,28 @@
+'use client';
+import React, { useState } from 'react';
+
 const HomePage = () => {
+  const [isGlowing, setIsGlowing] = useState(false);
+
+  const handleButtonClick = () => {
+    setIsGlowing(true);
+
+    // Reset the state after 300ms (or any desired delay)
+    setTimeout(() => {
+      setIsGlowing(false);
+    }, 200); // 300ms is the duration of the effect
+  };
+
   return (
-    <div className="relative flex flex-col items-center justify-center min-h-screen bg-transparent border-spacing-0 ">
-      <div className="absolute inset-0 bg-cover bg-center opacity-60  " style={{ backgroundImage: "url('/basepacc.jpg')" }}></div>
-      <h1 className="text-4xl font-bold text-white mb-4 z-10">Welcome to BASEpac</h1>
-      <p className="text-lg text-white mb-6 z-10">Tap to earn and have fun!</p>
-      <img src="/BASEpaclogo__1_-removebg-preview.png" alt="BASEpac Logo" className="w-1/4 md:w-1/5 lg:w-1/6 z-10" />
+    <div className="relative flex flex-col items-center min-h-full bg-transparent border-spacing-0 text-white">
+      <h1 className="text-6xl font-bold mb-4 z-10 pt-4 pb-8">Welcome to BASEpac</h1>
+      <p className="text-2xl font-bold mb-6 z-10">Tap to earn and have fun!</p>
+      <button 
+        className={`transform transition duration-300 ${isGlowing ? 'scale-90' : ''}`}
+        onClick={handleButtonClick}
+      >
+        <img src="/BASEpaclogo__1_-removebg-preview.png" alt="BASEpac Logo" width={500} className=""/>
+      </button>
     </div>
   );
 };

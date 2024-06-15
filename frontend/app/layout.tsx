@@ -18,6 +18,8 @@ const Layout = ({ children }: LayoutProps) => {
         <Sidebar />
           <main className="flex-1 px-0.5 pb-0.5 bg-black relative">
             {/* Background animation */}
+            <div className="absolute inset-0 bg-cover bg-center opacity-60 blur-sm " style={{ backgroundImage: "url('/basepacc.jpg')" }}></div>
+
             <div className="absolute inset-0   justify-self-center">
             </div>
             {/* Content */}
