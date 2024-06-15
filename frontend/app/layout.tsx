@@ -12,19 +12,19 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <html lang="en">
-      <body className="flex bg-black text-white">
+      <body className="flex-1 flex flex-col relative ">
+        <Navbar />
+        <div className="flex bg-black pt-0.5 text-white ">
         <Sidebar />
-        <div className="flex-1 flex flex-col relative">
-          <Navbar />
-          <main className="flex-1 p-4 bg-black relative">
+          <main className="flex-1 px-0.5 pb-0.5 bg-black relative">
             {/* Background animation */}
-            <div className="absolute inset-0 overflow-hidden z-0">
+            <div className="absolute inset-0   justify-self-center">
             </div>
             {/* Content */}
             <div className="relative z-10">{children}</div>
           </main>
-          <Footer />
         </div>
+        <Footer />
       </body>
     </html>
   );
