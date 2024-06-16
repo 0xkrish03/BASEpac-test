@@ -18,7 +18,7 @@ const HomePage = () => {
       <h1 className="text-6xl font-bold mb-4 z-10 pt-4 pb-8">Welcome to BASEpac</h1>
       <p className="text-2xl font-bold mb-6 z-10">Tap to earn and have fun!</p>
       <button 
-        className={`transform transition duration-300 ${isGlowing ? 'scale-90' : ''}`}
+        className={`transform transition duration-300 rounded-full ${isGlowing ? 'scale-90' : ''}`}
         onClick={handleButtonClick}
       >
         <img src="/BASEpaclogo__1_-removebg-preview.png" alt="BASEpac Logo" width={500} className=""/>
