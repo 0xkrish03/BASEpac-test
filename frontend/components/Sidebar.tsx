@@ -9,6 +9,8 @@ const Sidebar = () => {
 
       <Link href="/weekly-tasks" className="mb-4 p-2 bg- rounded hover:bg-cyan-600 hover:scale-105 transform transition duration-300">Tasks</Link>
       <Link href="/stats" className="mb-4 p-2 bg- rounded hover:bg-cyan-600 hover:scale-105 transform transition duration-300 ">Stats</Link>
+      <Link href="/airdrop" className="mb-4 p-2 bg- rounded hover:bg-cyan-600 hover:scale-105 transform transition duration-300 ">Airdrop</Link>
+      <Link href="/vision" className="mb-4 p-2 bg- rounded hover:bg-cyan-600 hover:scale-105 transform transition duration-300 ">Vision</Link>
       <Link href="/working" className="mb-4 p-2 bg- rounded hover:bg-cyan-600 hover:scale-105 transform transition duration-300 ">About</Link>
 
     </div>

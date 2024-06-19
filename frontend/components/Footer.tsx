@@ -6,7 +6,6 @@ const Footer = () => {
         <div>
         <li className="hover:underline"><Link href="/working">How the Game works</Link></li>
         </div>
-        <p>&copy; 2024 BASEpac. All rights reserved.</p>
       </footer>
     );
   };
