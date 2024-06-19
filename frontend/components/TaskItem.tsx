@@ -6,9 +6,14 @@ interface TaskItemProps {
   text: string;
   reward: string;
   completed: boolean;
+  url: string;
 }
 
-const TaskItem: React.FC<TaskItemProps> = ({ icon, text, reward, completed }) => {
+const TaskItem: React.FC<TaskItemProps> = ({ icon, text, reward, completed, url }) => {
+  const handleButtonClick = () => {
+    window.open(url, '_blank');
+  };
+
   return (
     <div className="flex items-center justify-between p-4 border-b border-gray-300">
       <div className="flex items-center">
@@ -18,11 +23,7 @@ const TaskItem: React.FC<TaskItemProps> = ({ icon, text, reward, completed }) =>
           <div className="text-sm text-gray-500">{reward}</div>
         </div>
       </div>
-      {completed ? (
-        <button className="bg-orange-500 text-white px-4 py-1 rounded ">Start</button>
-      ) : (
-        <button className="bg-orange-500 text-white px-4 py-1 rounded ">Start</button>
-      )}
+      <button onClick={handleButtonClick} className="bg-orange-500 text-white px-4 py-1 rounded">Go!</button>
     </div>
   );
 };

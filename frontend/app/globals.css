@@ -6,3 +6,21 @@ body {
   background: url('/baseback.jpg') no-repeat center center fixed;
   background-size: cover;
 }
+.plus-one-animation {
+  @apply animate-plusOne;
+}
+
+@keyframes plusOne {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}
+
+.animate-plusOne {
+  animation: plusOne 1s ease-out;
+}
