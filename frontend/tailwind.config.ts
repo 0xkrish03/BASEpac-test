@@ -1,4 +1,4 @@
-/ @type {import('tailwindcss').Config} */
+// @type {import('tailwindcss').Config}
 module.exports = {
   content: [
     './app/**/*.{js,ts,jsx,tsx}',
@@ -11,8 +11,8 @@ module.exports = {
         silver: '#C0C0C0',
         gold: '#FFD700',
         legend: '#FF4500',
+      },
     },
   },
   plugins: [],
-  }
-}
+};
