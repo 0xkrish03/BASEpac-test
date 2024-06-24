@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
-import { BlackCreateWalletButton } from './BlackCreateWalletButton';  // Import the wallet button
+import { client } from '@/app/client';
+import { ConnectButton } from 'thirdweb/react';
+import { ThirdwebProvider } from "thirdweb/react";
 
 const Navbar = () => {
   return (
@@ -9,7 +11,9 @@ const Navbar = () => {
         <img src="/logo.jpg" alt="BASEpac Logo" width={45} className=""/>
         <span className="pt-5 text-xl text-bold">BASEpac</span>
       </Link>
-      <BlackCreateWalletButton /> {/* Use the wallet button here */}
+      <ConnectButton
+        client={client}
+        />
     </nav>
   );
 };

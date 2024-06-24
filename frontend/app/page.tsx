@@ -1,5 +1,7 @@
 'use client';
+import { client } from './client';
 import React, { useState } from 'react';
+import { ConnectButton } from 'thirdweb/react';
 
 const HomePage = () => {
   const [isGlowing, setIsGlowing] = useState(false);
@@ -36,6 +38,7 @@ const HomePage = () => {
             +1
           </span>
         )}
+
       </div>
     </div>
   );
